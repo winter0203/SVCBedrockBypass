@@ -1,0 +1,15 @@
+# Whether the Bedrock exemption is active.
+enabled: true
+
+# Enable detection through the APIs of installed Geyser/Floodgate plugins.
+bedrock-detection:
+  floodgate: true
+  geyser: true
+
+# Regular expressions matched against the kick reason.
+# Default Simple Voice Chat message: "You need <plugin name> <version> to play on this server"
+kick-reason-patterns:
+  - '(?i)^You need .+ to play on this server$'
+
+# Extra diagnostics. Keep false during normal operation.
+debug: false
