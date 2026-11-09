@@ -1,0 +1,7 @@
+name: SVCBedrockBypass
+version: '${version}'
+main: cn.frostcraft.svcbedrockbypass.SVCBedrockBypassPlugin
+api-version: '1.21'
+authors: [FrostCraft]
+description: Allows Geyser Bedrock players to bypass Simple Voice Chat's forced-client check.
+softdepend: [voicechat, floodgate, Geyser-Spigot, Geyser]
