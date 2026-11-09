@@ -2,6 +2,8 @@ name: Build and Release
 
 on:
   push:
+    branches:
+      - main
     tags:
       - 'v*'
   workflow_dispatch:
@@ -22,10 +24,14 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Set up Gradle
+      # Use the Gradle version preinstalled on the GitHub-hosted runner.
+      # setup-gradle's gradle-version provisioning hit HTTP 504 while downloading
+      # the distribution, before the actual build could start.
+      - name: Set up Gradle caching
         uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '8.10.2'
+
+      - name: Show Gradle version
+        run: gradle --version
 
       - name: Build plugin
         run: gradle --no-daemon clean build
